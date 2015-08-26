@@ -229,7 +229,7 @@ sub {
   display: inline-block;
   overflow: visible;
   margin-right: 6px;
-  padding: 6px;
+  padding: 6px 6px 4px 6px;
   font: inherit;
   -webkit-font-smoothing: antialiased;
   text-align: center;
