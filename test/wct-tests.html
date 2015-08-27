@@ -11,11 +11,23 @@
 <body>
 
 <!-- You use the document as a place to set up your fixtures. -->
-<px-alert-label type="important" id="fixture"></px-alert-label>
+<px-alert-label type="important" id="fixture-important"></px-alert-label>
+<px-alert-label type="warning" id="fixture-warning"></px-alert-label>
+<px-alert-label type="error" id="fixture-error"></px-alert-label>
+<px-alert-label type="info" id="fixture-info"></px-alert-label>
+<px-alert-label type="healthy" id="fixture-healthy"></px-alert-label>
+<px-alert-label type="healthy-inverted" id="fixture-healthy-inverted"></px-alert-label>
+<px-alert-label type="unknown" id="fixture-unknown"></px-alert-label>
 <script>
   suite('<px-alert-label>', function() {
     test('is px-alert-label', function() {
-      assert.equal(document.getElementById('fixture').label, 'Important');
+      assert.equal(document.getElementById('fixture-important').label, 'Important');
+      assert.equal(document.getElementById('fixture-warning').label, 'Warning');
+      assert.equal(document.getElementById('fixture-error').label, 'Error');
+      assert.equal(document.getElementById('fixture-info').label, 'Information');
+      assert.equal(document.getElementById('fixture-healthy').label, 'Healthy');
+      assert.equal(document.getElementById('fixture-healthy-inverted').label, 'Healthy');
+      assert.equal(document.getElementById('fixture-unknown').label, 'Unknown');
     });
   });
 </script>
