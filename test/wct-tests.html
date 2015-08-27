@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../px-alert-label.html">
+</head>
+<body>
+
+<!-- You use the document as a place to set up your fixtures. -->
+<px-alert-label type="important" id="fixture"></px-alert-label>
+<script>
+  suite('<px-alert-label>', function() {
+    test('is px-alert-label', function() {
+      assert.equal(document.getElementById('fixture').label, 'Important');
+    });
+  });
+</script>
+
+</body>
+</html>
