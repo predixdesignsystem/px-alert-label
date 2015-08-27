@@ -74,6 +74,7 @@ Element renders an alert label from a predefined set of alerts.
         case 'unknown':
           return 'Unknown';
         default:
+          console.log('px-alert-label error: unrecognized type: ' + type);
           return '';
       }
     },
