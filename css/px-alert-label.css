@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+/*
+THIS FILE SHOULD CONTAIN ONLY RULES SPECIFIC TO PREDIX BRANDING
+common/abstract rules go in px-alert-label-sketch.scss, not in this file.
+*/
+/*------------------------------------*    #PX-COLORS-DESIGN
+\*------------------------------------*/
+/**
+ * Brand Colors
+ */
+/**
+     * Primary
+     */
+/**
+     * Light
+     */
+/**
+     * Dark
+     */
+/**
+ * Monochromatic (gray10 is darkest, gray1 is lightest)
+ */
+/**
+ * Buttons
+ */
+/**
+ * Selection
+ */
+/**
+ * Alerts
+ */
+/**
+ * Data Visualization
+ */
+/**
+     * Basic
+     */
+/**
+     * Light
+     */
+/**
+     * Dark
+     */
+.alertlabel {
+  display: inline-block;
+  overflow: visible;
+  margin-right: 6px;
+  padding: 6px 6px 4px 6px;
+  font: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #e53838;
+  font-weight: bold; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--important {
+  background-color: #e53838;
+  color: white; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--warning {
+  background-color: #dd6b1f;
+  color: white; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--error {
+  background-color: #e8a736;
+  color: white; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--info {
+  background-color: #4364dd;
+  color: white; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--healthy {
+  background-color: white;
+  color: black;
+  border: 2px solid #b1b1bc; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--healthy-inverted {
+  background-color: black;
+  color: white; }
+
+/**
+   * Change label colors colors for Important alert label
+   */
+.alertlabel--unknown {
+  background-color: #b1b1bc;
+  color: white; }

@@ -1,0 +1,170 @@
+
+/// @type String [default] - Prepend value for all generated classes
+$inuit-alertlabel-namespace                    : $inuit-namespace !default;
+
+/// @type Color [default] - Important font color
+$inuit-alertlabel-color--important             : $white !default;
+
+/// @type Color [default] - Important background color
+$inuit-alertlabel-background--important        : $alert-red !default;
+
+/// @type Color [default] - Warning font color
+$inuit-alertlabel-color--warning               : $white !default;
+
+/// @type Color [default] - Warning background color
+$inuit-alertlabel-background--warning          : $alert-orange !default;
+
+/// @type Color [default] - Error font color
+$inuit-alertlabel-color--error                 : $white !default;
+
+/// @type Color [default] - Error background color
+$inuit-alertlabel-background--error            : $alert-yellow !default;
+
+/// @type Color [default] - Info font color
+$inuit-alertlabel-color--info                  : $white !default;
+
+/// @type Color [default] - Info background color
+$inuit-alertlabel-background--info             : $alert-blue !default;
+
+/// @type Color [default] - Healthy font color
+$inuit-alertlabel-color--healthy               : $black !default;
+
+/// @type Color [default] - Healthy background color
+$inuit-alertlabel-background--healthy          : $white !default;
+
+/// @type Color [default] - Healthy border color
+$inuit-alertlabel-border-color--healthy        : $gray5 !default;
+
+/// @type Color [default] - Healthy Inverted font color
+$inuit-alertlabel-color--healthy-inverted      : $white !default;
+
+/// @type Color [default] - Healthy Inverted background color
+$inuit-alertlabel-background--healthy-inverted : $black !default;
+
+/// @type Color [default] - Unknown font color
+$inuit-alertlabel-color--unknown               : $white !default;
+
+/// @type Color [default] - Unknown background color
+$inuit-alertlabel-background--unknown          : $gray5 !default;
+
+/// @type Boolean [default] - Produce CSS for Important alert label?
+$inuit-enable-alertlabel--important            : false !default;
+
+/// @type Boolean [default] - Produce CSS for Warning alert label?
+$inuit-enable-alertlabel--warning              : false !default;
+
+/// @type Boolean [default] - Produce CSS for Error alert label?
+$inuit-enable-alertlabel--error                : false !default;
+
+/// @type Boolean [default] - Produce CSS for Info alert label?
+$inuit-enable-alertlabel--info                 : false !default;
+
+/// @type Boolean [default] - Produce CSS for Healthy alert label?
+$inuit-enable-alertlabel--healthy              : false !default;
+
+/// @type Boolean [default] - Produce CSS for inverted version of Healthy alert label?
+$inuit-enable-alertlabel--healthy-inverted     : false !default;
+
+/// @type Boolean [default] - Produce CSS for Unknown alert label?
+$inuit-enable-alertlabel--unknown              : false !default;
+
+.#{$inuit-alertlabel-namespace}alertlabel,
+%#{$inuit-alertlabel-namespace}alertlabel {
+  display: inline-block;
+  overflow: visible;
+  margin-right: 6px;
+  padding: 6px 6px 4px 6px;
+  font: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: $inuit-alertlabel-background--important;
+  font-weight: bold;
+}
+
+@if ($inuit-enable-alertlabel--important == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--important,
+  %#{$inuit-alertlabel-namespace}alertlabel--important {
+    background-color: $inuit-alertlabel-background--important;
+    color: $inuit-alertlabel-color--important;
+  }
+}
+
+@if ($inuit-enable-alertlabel--warning == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--warning,
+  %#{$inuit-alertlabel-namespace}alertlabel--warning {
+    background-color: $inuit-alertlabel-background--warning;
+    color: $inuit-alertlabel-color--warning;
+  }
+}
+
+@if ($inuit-enable-alertlabel--error == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--error,
+  %#{$inuit-alertlabel-namespace}alertlabel--error {
+    background-color: $inuit-alertlabel-background--error;
+    color: $inuit-alertlabel-color--error;
+  }
+}
+
+@if ($inuit-enable-alertlabel--info == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--info,
+  %#{$inuit-alertlabel-namespace}alertlabel--info {
+    background-color: $inuit-alertlabel-background--info;
+    color: $inuit-alertlabel-color--info;
+  }
+}
+
+@if ($inuit-enable-alertlabel--healthy == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--healthy,
+  %#{$inuit-alertlabel-namespace}alertlabel--healthy {
+    background-color: $inuit-alertlabel-background--healthy;
+    color: $inuit-alertlabel-color--healthy;
+    border: 2px solid $inuit-alertlabel-border-color--healthy;
+  }
+}
+
+@if ($inuit-enable-alertlabel--healthy-inverted == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--healthy-inverted,
+  %#{$inuit-alertlabel-namespace}alertlabel--healthy-inverted {
+    background-color: $inuit-alertlabel-background--healthy-inverted;
+    color: $inuit-alertlabel-color--healthy-inverted;
+  }
+}
+
+@if ($inuit-enable-alertlabel--unknown == true) {
+  /**
+   * Change label colors colors for Important alert label
+   */
+
+  .#{$inuit-alertlabel-namespace}alertlabel--unknown,
+  %#{$inuit-alertlabel-namespace}alertlabel--unknown {
+    background-color: $inuit-alertlabel-background--unknown;
+    color: $inuit-alertlabel-color--unknown;
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "px-alert-label",
+    "version": "0.0.3",
+    "main": [
+        "px-alert-label.html"
+    ],
+    "ignore": [
+        ".*",
+        "npm-debug.log",
+        "Gruntfile.js",
+        "sass",
+        "bower_components",
+        "node_modules",
+        "test"
+    ],
+    "dependencies": {
+      "polymer": "~1.0.0",
+      "px-theme": "https://github.com/PredixDev/px-theme.git#~0.2.0"
+    },
+    "devDependencies": {
+      "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
+      "px-starter-kit-design": "https://github.com/PredixDev/px-starter-kit-design.git#~0.4.0",
+      "web-component-tester": "~3.3.14"
+    }
+}

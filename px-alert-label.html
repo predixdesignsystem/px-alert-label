@@ -1,0 +1,98 @@
+
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
+    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
+    See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+
+
+<!--
+Element renders an alert label from a predefined set of alerts.
+
+##### Usage
+
+    <px-alert-label type="important|warning|error|info|healthy|healthy-inverted|unknown"></px-alert-label>
+
+@element px-alert-label
+@blurb renders an alert label
+@homepage index.html
+@demo demo.html
+-->
+<dom-module id="px-alert-label">
+  <link rel="import" type="css" href="css/px-alert-label.css"/>
+  <template>
+    <span class$="{{alertStyle}}">{{label}}</span>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'px-alert-label',
+
+    /**
+     * Properties block, expose attribute values to the DOM via 'reflect'
+     *
+     * @property properties
+     * @type Object
+     */
+    properties: {
+      type: String,
+      label: {
+        type: String,
+        computed: 'computeLabel(type)'
+      },
+      alertStyle: {
+        type: String,
+        reflect: true,
+        computed: 'computeAlertStyle(type)'
+      }
+    },
+
+    /**
+     * calculate the computed property value
+     *
+     * @method increment
+     */
+    computeLabel: function(type) {
+      // TODO: validation on "type"
+      switch (type.toLowerCase()) {
+        // handle localization here
+        case 'important':
+          return 'Important';
+        case 'warning':
+          return 'Warning';
+        case 'error':
+          return 'Error';
+        case 'info':
+          return 'Information';
+        case 'healthy':
+        case 'healthy-inverted':
+          return 'Healthy';
+        case 'unknown':
+          return 'Unknown';
+        default:
+          console.log('px-alert-label error: unrecognized type: ' + type);
+          return '';
+      }
+    },
+
+    computeAlertStyle: function(type) {
+      var typeLowercase = type.toLowerCase();
+      switch (typeLowercase) {
+        case 'important':
+        case 'warning':
+        case 'error':
+        case 'info':
+        case 'healthy':
+        case 'healthy-inverted':
+        case 'unknown':
+          return 'alertlabel alertlabel--' + typeLowercase;
+        default:
+          return '';
+      }
+    }
+  });
+</script>
