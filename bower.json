@@ -15,7 +15,7 @@
     ],
     "dependencies": {
       "polymer": "~1.0.0",
-      "px-theme": "https://github.com/PredixDev/px-theme.git#~0.2.0"
+      "px-theme": "https://github.com/PredixDev/px-theme.git#~0.3.14"
     },
     "devDependencies": {
       "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
