@@ -1,6 +1,6 @@
 {
     "name": "px-alert-label",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": [
         "px-alert-label.html"
     ],
@@ -15,10 +15,10 @@
     ],
     "dependencies": {
       "polymer": "~v1.2.3",
-      "px-theme": "https://github.com/PredixDev/px-theme.git#~0.3.16"
+      "px-theme": "https://github.com/PredixDev/px-theme.git#~0.4.0"
     },
     "devDependencies": {
-      "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
+      "iron-component-page": "PolymerElements/iron-component-page#~v1.1.0",
       "px-starter-kit-design": "https://github.com/PredixDev/px-starter-kit-design.git#~0.4.0",
       "web-component-tester": "~3.3.14"
     }
