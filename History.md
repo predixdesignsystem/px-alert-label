@@ -1,7 +1,0 @@
-v0.0.1
-==================
-* Initial release
-
-v0.1.2
-==================
-* Updated License
