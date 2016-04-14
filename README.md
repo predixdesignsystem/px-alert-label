@@ -20,13 +20,13 @@ Node, npm and bower are necessary to install the component and dependencies. web
 First, install the component via bower on the command line.
 
 ```
-bower install px-alert-message --save
+bower install px-alert-label --save
 ```
 
 Second, import the component to your application with the following tag in your head.
 
 ```
-<link rel="import" href="/bower_components/px-alert-message/px-alert-message.html"/>
+<link rel="import" href="/bower_components/px-alert-label/px-alert-label.html"/>
 ```
 
 Finally, use the component in your application:
@@ -39,7 +39,7 @@ Finally, use the component in your application:
 <hr />
 ## documentation
 
-Read the full API and view the demo [here](https://predixdev.github.io/px-alert-message).
+Read the full API and view the demo [here](https://predixdev.github.io/px-alert-label).
 
 ## Local Development
 
