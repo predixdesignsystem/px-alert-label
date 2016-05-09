@@ -1,3 +1,7 @@
+v0.2.2
+=================
+* added testing for pull request inside travis
+
 v0.2.1
 =================
 * added auto-build github pages functionality

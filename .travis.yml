@@ -27,7 +27,7 @@ env:
   - secure: Zp+nlNFfY7xebrhC7g5ACY1VUUtfSS4gipeHkygGA+ya0uPTy6N/2+sGdCXhJfqiJhyzCS9g4WI4EFGT/kiNKlYFX7L+ne26qNeOY/Yu7L0/F7PYXaKr9r7FdiJBl/AxWe7ow3AmWQT5sEXrKmB1dMPK6dV4A9GdBEXF9KV/AampplZloGgb8C0JMdOOdOotnLKAhhmr6sW+d+v7Sq2udN3TXAnM09y00nXTWjlBsgu/8GMW5woDpWRkNT+NATrt+Q1B556ugp4dRxwKrgdh1OHGm+rdHpyzZksYemLUs9ejEWezp2UoLnzeqQUFxk99u1T2pcfpNKvD+zkfHZe+AeX/lMI74qoFQ6eP+nLq2/RVd1RKjzLgI83slnE10F06bUh85WONqnE5HVVqoTBZun2FOQXUAHCxma52PajcaPjaF5/f7iHzY1D1yyi8Rc1hvTRq/ILKuEhVzFSwKpqvN/iVFX6fDEKZSfyge7Skq5F0Fhra1IOHEtDSw6lOTEenfx7tzpeBfNRK2xx7CQHdJTFZGiKDXjJFBNMyue7GepRw6pE2//w/692L59uRVt0NIDHFgs9yJ8Fc8ObmcnqNmpvEPUqBdD1+eF96nBYdfT73d3zCzWYBmoR/SCfbDgZCHcMJSM9vYb+bz1hVKnKeSqGdeejzdET/3sg8WDxx6h0=
   - secure: P4nEZ4ytgez+nVjLphmDcpQSL5FC2+9UiaU7iZhxnjZBjCcU6SanDbnmsy5Eh89CBq1ZwjfierDXvMQLV+dkO7qyXuyD6dxeb8gCYmdde1qymcxf6a391hbAH6G2rbi/CkkFa+/BiAbZfLPRwn33Ii8k9GGIobMO+S0Y/PV6bue26y2MPK4bNYFUlrVwrSipwGIFaIbSYgn2Imc5duptfLELKVoQB+Jv1DcJKBrXsOXUT2DyR4s+AzTSQZVNUwIN938rSlHWLZ1cAYJS34Vl7nt2awxX2OcFGMJ/OJy53oa/ujhB9xpcsjxU3XFuwL415R9DTlkrLI29AqhYMO+OZK1NN1rjDQTOpE8rC7bIiq2kDd5QX9/xB3vcxsXs0GRGIxvUruV+/+cp46PbDlW9D6edKzmdMDD6i92WgnBib7uai10h/kzBL+wVH9NXcPR97zTC0BFMPYA1b/romsntVBsd+7zE0V+0kzXfVq5FvWY2ZKRq5f3wXV19XTwe3W3w5QyC61jmMdHlk2NwuhoPg2ckhgYQpMzX8BTDP88hj3Ur/skrsA4P3XuRxXJvIVRG4+1dxQRKpXLc2IgOybbONPuKVAvA/LYg2hPAE2NA8PhdArUfVBaHZZynvlvSn6kr8+L9zFulH3byVXRteC4YtGbyl6kuzoWewUbuZfhHII4=
 before_install:
-  - openssl aes-256-cbc -k "$password" -in id_rsa.enc -out deploy_key -d
+  - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -k "$password" -in id_rsa.enc -out deploy_key -d; fi
 after_success:
 - cd $TRAVIS_BUILD_DIR/scripts
 - chmod 755 ghp.sh
