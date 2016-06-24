@@ -40,42 +40,11 @@ Element renders an alert label from a predefined set of alerts.
      */
     properties: {
       type: String,
-      label: {
-        type: String,
-        computed: 'computeLabel(type)'
-      },
+      label: String,
       alertStyle: {
         type: String,
         reflect: true,
         computed: 'computeAlertStyle(type)'
-      }
-    },
-
-    /**
-     * calculate the computed property value
-     *
-     * @method increment
-     */
-    computeLabel: function(type) {
-      // TODO: validation on "type"
-      switch (type.toLowerCase()) {
-        // handle localization here
-        case 'important':
-          return 'Important';
-        case 'warning':
-          return 'Warning';
-        case 'error':
-          return 'Error';
-        case 'info':
-          return 'Information';
-        case 'healthy':
-        case 'healthy-inverted':
-          return 'Healthy';
-        case 'unknown':
-          return 'Unknown';
-        default:
-          console.log('px-alert-label error: unrecognized type: ' + type);
-          return '';
       }
     },
 
