@@ -1,3 +1,7 @@
+v1.0.0
+=================
+* Support use of custom labels.
+
 v0.3.0
 =================
 * Upgrade to Polymer 1.5.0
