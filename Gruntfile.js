@@ -24,7 +24,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'css/noprefix/px-alert-label-sketch.css': 'sass/px-alert-label-sketch.scss',
-                    'css/noprefix/px-alert-label.css': 'sass/px-alert-label-predix.scss'
+                    'css/noprefix/px-alert-label.css': 'sass/px-alert-label-predix.scss',
+                    'css/noprefix/px-alert-label-demo.css': 'sass/px-alert-label-demo.scss'
                 }
             }
         },
