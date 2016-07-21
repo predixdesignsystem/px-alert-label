@@ -23,7 +23,7 @@ Element renders an alert label from a predefined set of alerts.
 <dom-module id="px-alert-label">
   <link rel="import" type="css" href="css/px-alert-label.css"/>
   <template>
-    <span class$="{{alertStyle}}">{{label}}</span>
+    <span class$="{{_alertStyle}}">{{label}}</span>
   </template>
 </dom-module>
 
@@ -39,16 +39,45 @@ Element renders an alert label from a predefined set of alerts.
      * @type Object
      */
     properties: {
+      /**
+       * The type of alert label defines the visual styling.
+       * Should be one of important, warning, error, info, healthy, healthy-inverted or unknown.
+       *
+       * @property type
+       * @type String
+       */
       type: String,
+
+      /**
+       * The text to display inside of the label.
+       *
+       * @property label
+       * @type String
+       */
       label: String,
-      alertStyle: {
+
+      /**
+       * Computed class names that correspond to each label type.
+       *
+       * @property _alertStyle
+       * @type String
+       * @reflect true
+       * @computed _computeAlertStyle(type)
+       */
+      _alertStyle: {
         type: String,
         reflect: true,
-        computed: 'computeAlertStyle(type)'
+        computed: '_computeAlertStyle(type)'
       }
     },
 
-    computeAlertStyle: function(type) {
+    /**
+     * Computes class names that correspond to each label type.
+     *
+     * @method _computeAlertStyle
+     * @param type
+     */
+    _computeAlertStyle: function(type) {
       var typeLowercase = type.toLowerCase();
       switch (typeLowercase) {
         case 'important':
