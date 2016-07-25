@@ -1,3 +1,7 @@
+v1.0.1
+=================
+* added mega demo
+
 v1.0.0
 =================
 * Support use of custom labels.

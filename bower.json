@@ -1,6 +1,6 @@
 {
   "name": "px-alert-label",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": [
     "px-alert-label.html"
   ],
@@ -12,7 +12,8 @@
     "bower_components",
     "node_modules",
     "test",
-    "OSS_Notice.pdf"
+    "OSS_Notice.pdf",
+    ".github"
   ],
   "dependencies": {
     "polymer": "^v1.5.0",

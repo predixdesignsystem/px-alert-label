@@ -11,7 +11,7 @@
   <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
   <link rel="import" href="../px-tabs/px-tab-set.html" />
   <link rel="import" href="px-alert-label.html"/>
-  <link rel="icon" href="px-favicon.png" type="image/x-icon"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="import" href="../px-demo-snippet/px-demo-snippet.html">
   <link rel="import" href="../polymer-font-awesome/polymer-font-awesome.html">
   <link rel="import" href="../px-dropdown/px-dropdown.html" />
@@ -31,6 +31,7 @@
   		<p>
   			Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of label (important, warning, label, information, healthy, healthy inverted, and unknown) has its own distinct background color and appropriate font color for maximum visibility. The text within the label is configurable, but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may confuse the label for a button.
   		</p>
+      <br />
   		<div class="flex">
   			<img class="u-mr--" src="https://img.shields.io/travis/PredixDev/px-alert-label.svg?style=flat-square" alt="Travis"/>
   			<img class="u-mr--" src="https://img.shields.io/bower/v/px-alert-label.svg?style=flat-square" alt="Bower"/>
@@ -141,13 +142,16 @@ window.addEventListener('WebComponentsReady', function() {
       ],
       indexPlusOne = function(num) {
         return num + 1;
-      };
+      },
+      year = new Date();
 
 
   template.selected = "0";
   template.optionsArray = optionsArray;
   template.indexPlusOne = indexPlusOne;
   template.items = items;
+  template.year = year.getFullYear();
+
 });
 </script>
 
