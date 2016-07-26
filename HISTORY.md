@@ -1,3 +1,7 @@
+v1.0.2
+=================
+* updated gh-pages script to vulcanize demo
+
 v1.0.1
 =================
 * added mega demo
