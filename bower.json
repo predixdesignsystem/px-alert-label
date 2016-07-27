@@ -1,6 +1,6 @@
 {
   "name": "px-alert-label",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": [
     "px-alert-label.html"
   ],
@@ -26,10 +26,10 @@
     "px-forms-design": "#~0.3.15",
     "px-tables-design": "#~0.3.12",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
-    "polymer-font-awesome": "~0.1.5",
+    "polymer-font-awesome": "px-polymer-font-awesome#^0.1.8",
     "px-tabs": "~0.4.0",
     "px-api-viewer": "~0.0.3",
-    "px-demo-snippet": "~0.0.11",
+    "px-demo-snippet": "~0.0.12",
     "px-actionable-text-icons-design": "^0.0.3",
     "px-code-design": "^0.2.11",
     "px-headings-design": "^0.2.14",

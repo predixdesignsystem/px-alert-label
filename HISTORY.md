@@ -1,3 +1,7 @@
+v1.0.3
+=================
+* updated demo page and added image to readme
+
 v1.0.2
 =================
 * updated gh-pages script to vulcanize demo
