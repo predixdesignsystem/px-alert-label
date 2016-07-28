@@ -1,3 +1,7 @@
+v1.0.4
+=================
+* updated image on readme.
+
 v1.0.3
 =================
 * updated demo page and added image to readme
