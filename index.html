@@ -56,7 +56,7 @@
           <section class="tab-page flex flex--right flex--wrap">
             <div class="mega-demo flex u-pb++">
             <!-- Properties -->
-            <div class="properties u-ph+ u-pb+  u-m++">
+            <div class="properties u-ph+ u-pb+ u-mt++ u-mh++">
               <p class="epsilon">Properties</p>
               <div class="u-mb-">Label: <input id="label{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="Label" value="{{item.label::input}}" /></div>
               <div class="flex">Type:</div>
@@ -139,6 +139,10 @@ window.addEventListener('WebComponentsReady', function() {
         {
           "type":"important",
           "label":"Caution!"
+        },
+        {
+          "type":"info",
+          "label":"Information"
         }
       ],
       indexPlusOne = function(num) {

@@ -1,3 +1,7 @@
+v1.0.5
+=================
+* updated px-demo-snippet bower and sass styles
+
 v1.0.4
 =================
 * updated image on readme.
