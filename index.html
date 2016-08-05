@@ -30,9 +30,15 @@
     <div class="hero u-p++ text--shadow">
       <a class="actionable flex flex--right flex--middle" href="https://github.com/PredixDev/px-alert-label" target="_blank"><iron-icon class="menu__open" icon="fa:fa-github"></iron-icon>View on Github</a>
   		<h1 class="delta">px-alert-label</h1>
-  		<p>
-  			Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of label (important, warning, label, information, healthy, healthy inverted, and unknown) has its own distinct background color and appropriate font color for maximum visibility. The text within the label is configurable, but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may confuse the label for a button.
-  		</p>
+      <div class="description-text">
+    		<p>
+    			Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of
+          label (important, warning, label, information, healthy, healthy inverted, and unknown) has its own distinct
+          background color and appropriate font color for maximum visibility. The text within the label is configurable,
+          but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may
+          confuse the label for a button.
+    		</p>
+      </div>
       <br />
   		<div class="flex">
   			<img class="u-mr--" src="https://img.shields.io/travis/PredixDev/px-alert-label.svg?style=flat-square" alt="Travis"/>
@@ -47,32 +53,32 @@
       <div class="tabContainer u-pt++ u-pl++">
         <px-tab-set selected="{{selected}}" bare no-bottom-border>
           <template is="dom-repeat" items="{{optionsArray}}">
-            <px-tab>Configuration {{indexPlusOne(index)}}</px-tab>
+            <px-tab>Option {{indexPlusOne(index)}}</px-tab>
           </template>
         </px-tab-set>
       </div>
       <px-tab-pages selected="{{selected}}">
         <template is="dom-repeat" items="{{optionsArray}}">
-          <section class="tab-page flex flex--right flex--wrap">
-            <div class="mega-demo flex u-pb++">
-            <!-- Properties -->
-            <div class="properties u-ph+ u-pb+ u-mt++ u-mh++">
-              <p class="epsilon">Properties</p>
-              <div class="u-mb-">Label: <input id="label{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="Label" value="{{item.label::input}}" /></div>
-              <div class="flex">Type:</div>
-              <div class="flex u-mb-">
-                <px-dropdown id="type{{indexPlusOne(index)}}" style="width:100%;" value="{{item.type}}" display-value="Select">
-                  <px-dropdown-content
-                  items={{items}}>
-                </px-dropdown-content>
-                </px-dropdown>
+          <section class="tab-page">
+            <div class="mega-demo flex flex--wrap u-ph++ u-pb++">
+              <!-- Properties -->
+              <div class="properties u-ph+ u-pb+ u-mt+">
+                <p class="epsilon">Properties</p>
+                <div class="u-mb-">Label: <input id="label{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="Label" value="{{item.label::input}}" /></div>
+                <div class="flex">Type:</div>
+                <div class="flex u-mb-">
+                  <px-dropdown id="type{{indexPlusOne(index)}}" style="width:100%;" value="{{item.type}}" display-value="Select">
+                    <px-dropdown-content
+                    items={{items}}>
+                  </px-dropdown-content>
+                  </px-dropdown>
+                </div>
               </div>
-            </div>
 
-            <div class="demoContainer u-mr++">
+            <div class="demoContainer u-mt+">
               <!-- demo -->
               <div class="flex flex--col">
-                <div class="flex__item demo u-ph+ u-pb+ u-mt++">
+                <div class="flex__item demo u-ph+ u-pb+">
                   <br />
                   <px-alert-label
                     id="label"

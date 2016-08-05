@@ -1,3 +1,7 @@
+v1.0.6
+=================
+* updated mega demo styles and px-demo-snippet bower to ^
+
 v1.0.5
 =================
 * updated px-demo-snippet bower and sass styles
