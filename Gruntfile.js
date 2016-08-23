@@ -43,93 +43,90 @@ module.exports = function (grunt) {
         },
 
         shell: {
-            options: {
-                stdout: true,
-                stderr: true
-            },
-            bower: {
-                command: 'bower install'
-            }
+          options: {
+            stdout: true,
+            stderr: true
+          },
+          bower: {
+            command: 'bower install'
+          }
         },
 
         jshint: {
-            all: [
-                'Gruntfile.js',
-                'js/**/*.js'
-            ],
-            options: {
-                jshintrc: '.jshintrc'
-            }
+          all: [
+            'Gruntfile.js',
+            'js/**/*.js'
+          ],
+          options: {
+            jshintrc: '.jshintrc'
+          }
         },
 
         watch: {
-            sass: {
-                files: ['sass/**/*.scss'],
-                tasks: ['sass', 'autoprefixer'],
-                options: {
-                    interrupt: true
-                }
+          sass: {
+            files: ['sass/**/*.scss'],
+            tasks: ['sass', 'autoprefixer'],
+            options: {
+              interrupt: true,
+              livereload: true
             }
+          },
+          htmljs: {
+            files: ['*.html', '*.js'],
+            options: {
+              interrupt: true,
+              livereload: true
+            }
+          }
         },
 
         depserve: {
-            options: {
-                open: '<%= depserveOpenUrl %>'
-            }
+          options: {
+            open: '<%= depserveOpenUrl %>'
+          }
         },
 
-        webdriver: {
+        concurrent: {
+          devmode: {
+            tasks: ['watch', 'depserve'],
             options: {
-                specFiles: ['test/*spec.js']
-            },
-            local: {
-                webdrivers: ['chrome']
+              logConcurrentOutput: true
             }
-        },
-        bump: {
-            options:{
-                files: ['bower.json', 'package.json'],
-                updateConfigs: [],
-                commitFiles: ['package.json', 'bower.json'],
-                push: false
-            }
+          }
         }
-    });
+      });
 
-    grunt.loadNpmTasks('grunt-bump');
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-shell');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-dep-serve');
-    grunt.loadNpmTasks('webdriver-support');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+      grunt.loadNpmTasks('grunt-sass');
+      grunt.loadNpmTasks('grunt-shell');
+      grunt.loadNpmTasks('grunt-contrib-clean');
+      grunt.loadNpmTasks('grunt-contrib-jshint');
+      grunt.loadNpmTasks('grunt-contrib-watch');
+      grunt.loadNpmTasks('grunt-dep-serve');
+      grunt.loadNpmTasks('grunt-autoprefixer');
+      grunt.loadNpmTasks('grunt-concurrent');
 
-    // Default task.
-    grunt.registerTask('default', 'Basic build', [
+      // Default task.
+      grunt.registerTask('default', 'Basic build', [
         'sass',
         'autoprefixer'
-    ]);
+      ]);
 
-    // First run task.
-    grunt.registerTask('firstrun', 'Basic first run', function() {
+      grunt.registerTask('devmode', 'Development Mode', [
+        'concurrent:devmode'
+      ]);
+
+      // First run task.
+      grunt.registerTask('firstrun', 'Basic first run', function() {
         grunt.config.set('depserveOpenUrl', '/index.html');
         grunt.task.run('default');
         grunt.task.run('depserve');
-    });
+      });
 
-    // Default task.
-    grunt.registerTask('test', 'Test', [
-        'jshint',
-        'webdriver'
-    ]);
-
-    grunt.registerTask('release', 'Release', [
+      grunt.registerTask('release', 'Release', [
         'clean',
         'shell:bower',
         'default',
         'test'
-    ]);
+      ]);
 
-};
+    };
