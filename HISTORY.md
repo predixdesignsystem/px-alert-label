@@ -1,3 +1,7 @@
+v1.0.5
+=================
+* added codepen
+
 v1.0.4
 =================
 * updated image on readme.
