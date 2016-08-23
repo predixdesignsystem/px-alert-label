@@ -1,6 +1,22 @@
-v1.0.5
+v1.0.9
 =================
 * added codepen
+
+v1.0.8
+=================
+* added overflow to demoContainer and removed flex__wrap from mega-demo
+
+v1.0.7
+=================
+* BOT: Travis config update
+
+v1.0.6
+=================
+* added overflow to demo class and removed <br>
+
+v1.0.5
+=================
+* updated mega demo styles and px-demo-snippet bower to ^
 
 v1.0.4
 =================
