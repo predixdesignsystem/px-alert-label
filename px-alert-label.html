@@ -20,9 +20,13 @@ Element renders an alert label from a predefined set of alerts.
 @homepage index.html
 @demo demo.html
 -->
+
+<link rel="import" href="css/px-alert-label-styles.html">
+
 <dom-module id="px-alert-label">
-  <link rel="import" type="css" href="css/px-alert-label.css"/>
   <template>
+    <style include="px-alert-label-styles"></style>
+    <style include="px-theme-styles"></style>
     <span class$="{{_alertStyle}}">{{label}}</span>
   </template>
 </dom-module>
