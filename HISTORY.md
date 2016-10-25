@@ -1,3 +1,7 @@
+v1.1.2
+=================
+* Update dependencies
+
 v1.0.9
 =================
 * added codepen
