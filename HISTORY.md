@@ -1,3 +1,7 @@
+v1.1.4
+=================
+* fixed typo
+
 v1.1.3
 =================
 * added style variables for theming

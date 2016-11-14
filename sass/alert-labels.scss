@@ -12,7 +12,7 @@ $inuit-alertlabel-background--important        : var(--px-alert-label-background
 $inuit-alertlabel-color--warning               : var(--px-alert-label-text-color--warning, $white) !default;
 
 /// @type Color [default] - Warning background color
-$inuit-alertlabel-background--warning          : var(--px-alert-lable-backgorund-color--warning, $alert-orange) !default;
+$inuit-alertlabel-background--warning          : var(--px-alert-label-background-color--warning, $alert-orange) !default;
 
 /// @type Color [default] - Error font color
 $inuit-alertlabel-color--error                 : var(--px-alert-label-text-color--error, $white) !default;
