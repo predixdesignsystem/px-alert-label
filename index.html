@@ -122,7 +122,7 @@
             <li>
               <a href="mailto:info@predix.io" class="footer__list--lnk">Contact Us</a>
             </li>
-            <li>Copyright &copy; {{year}} General Electric Company. All rights reserved.</li>
+            <li>Copyright &copy; 2016 General Electric Company. All rights reserved.</li>
           </ul>
         </div>
       </div>
@@ -154,15 +154,13 @@ window.addEventListener('WebComponentsReady', function() {
       ],
       indexPlusOne = function(num) {
         return num + 1;
-      },
-      year = new Date();
+      };
 
 
   template.selected = "0";
   template.optionsArray = optionsArray;
   template.indexPlusOne = indexPlusOne;
   template.items = items;
-  template.year = year.getFullYear();
 
 });
 </script>

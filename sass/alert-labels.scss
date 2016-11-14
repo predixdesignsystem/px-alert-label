@@ -3,49 +3,49 @@
 $inuit-alertlabel-namespace                    : $inuit-namespace !default;
 
 /// @type Color [default] - Important font color
-$inuit-alertlabel-color--important             : $white !default;
+$inuit-alertlabel-color--important             : var(--px-alert-label-text-color--alert, $white) !default;
 
 /// @type Color [default] - Important background color
-$inuit-alertlabel-background--important        : $alert-red !default;
+$inuit-alertlabel-background--important        : var(--px-alert-label-background-color--alert, $alert-red) !default;
 
 /// @type Color [default] - Warning font color
-$inuit-alertlabel-color--warning               : $white !default;
+$inuit-alertlabel-color--warning               : var(--px-alert-label-text-color--warning, $white) !default;
 
 /// @type Color [default] - Warning background color
-$inuit-alertlabel-background--warning          : $alert-orange !default;
+$inuit-alertlabel-background--warning          : var(--px-alert-lable-backgorund-color--warning, $alert-orange) !default;
 
 /// @type Color [default] - Error font color
-$inuit-alertlabel-color--error                 : $white !default;
+$inuit-alertlabel-color--error                 : var(--px-alert-label-text-color--error, $white) !default;
 
 /// @type Color [default] - Error background color
-$inuit-alertlabel-background--error            : $alert-yellow !default;
+$inuit-alertlabel-background--error            : var(--px-alert-label-background-color--error, $alert-yellow) !default;
 
 /// @type Color [default] - Info font color
-$inuit-alertlabel-color--info                  : $white !default;
+$inuit-alertlabel-color--info                  : var(--px-alert-label-text-color--info, $white) !default;
 
 /// @type Color [default] - Info background color
-$inuit-alertlabel-background--info             : $alert-blue !default;
+$inuit-alertlabel-background--info             : var(--px-alert-label-background-color--info, $alert-blue) !default;
 
 /// @type Color [default] - Healthy font color
-$inuit-alertlabel-color--healthy               : $black !default;
+$inuit-alertlabel-color--healthy               : var(--px-alert-label-text-color--healthy, $black) !default;
 
 /// @type Color [default] - Healthy background color
-$inuit-alertlabel-background--healthy          : $white !default;
+$inuit-alertlabel-background--healthy          : var(--px-alert-label-background-color--healthy, $white) !default;
 
 /// @type Color [default] - Healthy border color
-$inuit-alertlabel-border-color--healthy        : $gray5 !default;
+$inuit-alertlabel-border-color--healthy        : var(--px-alert-label-border-color--healthy, $gray5) !default;
 
 /// @type Color [default] - Healthy Inverted font color
-$inuit-alertlabel-color--healthy-inverted      : $white !default;
+$inuit-alertlabel-color--healthy-inverted      : var(--px-alert-label-text-color--inverted, $white) !default;
 
 /// @type Color [default] - Healthy Inverted background color
-$inuit-alertlabel-background--healthy-inverted : $black !default;
+$inuit-alertlabel-background--healthy-inverted : var(--px-alert-label-background-color--inverted, $black) !default;
 
 /// @type Color [default] - Unknown font color
-$inuit-alertlabel-color--unknown               : $white !default;
+$inuit-alertlabel-color--unknown               : var(--px-alert-label-text-color--unknown, $white) !default;
 
 /// @type Color [default] - Unknown background color
-$inuit-alertlabel-background--unknown          : $gray5 !default;
+$inuit-alertlabel-background--unknown          : var(--px-alert-label-background-color--unknown, $gray5) !default;
 
 /// @type Boolean [default] - Produce CSS for Important alert label?
 $inuit-enable-alertlabel--important            : false !default;
