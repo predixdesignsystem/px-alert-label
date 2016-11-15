@@ -1,3 +1,8 @@
+
+v1.1.5
+==================
+* bower updating px-demo-snippet
+
 v1.1.4
 =================
 * fixed typo
