@@ -1,13 +1,13 @@
 {
     "name": "px-alert-label",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "main": [
         "px-alert-label.html"
     ],
     "ignore": [
         ".*",
         "npm-debug.log",
-        "Gruntfile.js",
+        "gulpfile.js",
         "sass",
         "bower_components",
         "node_modules",
