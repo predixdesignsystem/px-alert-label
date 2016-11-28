@@ -1,3 +1,7 @@
+v1.1.18
+==================
+* fixed margin issue
+
 v1.1.17
 ==================
 * changing all devDeps to ^
