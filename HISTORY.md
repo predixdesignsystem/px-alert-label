@@ -1,3 +1,7 @@
+v1.1.19
+==================
+* changing browser in wct testing from safari 8 to safari 10 on elcapitan
+
 v1.1.18
 ==================
 * fixed margin issue
