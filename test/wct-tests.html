@@ -20,7 +20,6 @@
 <px-alert-label type="unknown" label="Unknown" id="fixture-unknown"></px-alert-label>
 <px-alert-label type="important" label="3" id="fixture-badge"></px-alert-label>
 <script>
-  suite('<px-alert-label>', function() {
     test('is px-alert-label', function(done) {
       assert.equal(document.getElementById('fixture-important').label, 'Important');
       assert.equal(document.getElementById('fixture-warning').label, 'Warning');
@@ -32,7 +31,6 @@
       assert.equal(document.getElementById('fixture-badge').label, '3');
       done();
     });
-  });
 </script>
 
 </body>
