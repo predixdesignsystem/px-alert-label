@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Component Test : Fixture for px-alert-label</title>
+
+    <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- web-component-tester automatically provides local copy of brower.js below
+         for any URL ending with "/web-component-tester/browser.js"
+         when wct is run from the command line -->
+    <script src="../web-component-tester/browser.js"></script>
+    <link rel="import" href="../px-alert-label.html" />
+    <!-- Retain this link for px-theme.html -->
+    <!-- px-theme is needed for WCT to run without errors -->
+    <link rel="import" href="../../px-theme/px-theme-styles.html">
+    <style include="px-theme-styles" is="custom-style"></style>
+    <!-- This script link will contain the generated script for basic wct test cases -->
+    <script src="px-alert-label-base-tests.js"></script>
+    <!-- This script link will contain the generated script stub for custom, developer-added test cases -->
+    <script src="px-alert-label-custom-tests.js"></script>
+  </head>
+
+  <body>
+    <h3>Web Component Test : Fixture for px-alert-label</h3>
+    <px-alert-label type="important" label="Important" id="fixture-important"></px-alert-label>
+    <px-alert-label type="warning" label="Warning" id="fixture-warning"></px-alert-label>
+    <px-alert-label type="error" label="Error" id="fixture-error"></px-alert-label>
+    <px-alert-label type="info" label="Information" id="fixture-info"></px-alert-label>
+    <px-alert-label type="healthy" label="Healthy" id="fixture-healthy"></px-alert-label>
+    <px-alert-label type="healthy-inverted" label="Inverted" id="fixture-healthy-inverted"></px-alert-label>
+    <px-alert-label type="unknown" label="Unknown" id="fixture-unknown"></px-alert-label>
+    <px-alert-label type="important" label="3" id="fixture-badge"></px-alert-label>
+  </body>
+</html>

@@ -37,6 +37,6 @@
     }
   },
   "suites": [
-    "test/wct-tests.html"
+    "test/px-alert-label-test-fixture.html"
   ]
 }
