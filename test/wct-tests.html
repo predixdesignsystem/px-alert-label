@@ -21,15 +21,17 @@
 <px-alert-label type="important" label="3" id="fixture-badge"></px-alert-label>
 <script>
     test('is px-alert-label', function(done) {
-      assert.equal(document.getElementById('fixture-important').label, 'Important');
-      assert.equal(document.getElementById('fixture-warning').label, 'Warning');
-      assert.equal(document.getElementById('fixture-error').label, 'Error');
-      assert.equal(document.getElementById('fixture-info').label, 'Information');
-      assert.equal(document.getElementById('fixture-healthy').label, 'Healthy');
-      assert.equal(document.getElementById('fixture-healthy-inverted').label, 'Inverted');
-      assert.equal(document.getElementById('fixture-unknown').label, 'Unknown');
-      assert.equal(document.getElementById('fixture-badge').label, '3');
-      done();
+      flush(function(){
+        assert.equal(document.getElementById('fixture-important').label, 'Important');
+        assert.equal(document.getElementById('fixture-warning').label, 'Warning');
+        assert.equal(document.getElementById('fixture-error').label, 'Error');
+        assert.equal(document.getElementById('fixture-info').label, 'Information');
+        assert.equal(document.getElementById('fixture-healthy').label, 'Healthy');
+        assert.equal(document.getElementById('fixture-healthy-inverted').label, 'Inverted');
+        assert.equal(document.getElementById('fixture-unknown').label, 'Unknown');
+        assert.equal(document.getElementById('fixture-badge').label, '3');
+        done();
+      });
     });
 </script>
 
