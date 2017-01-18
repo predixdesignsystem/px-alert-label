@@ -1,3 +1,7 @@
+v1.2.2
+=================
+* Updating colors and rebuilding CSS/demo CSS
+
 v1.2.1
 ==================
 * changing ghp.sh to account for Alpha releases
