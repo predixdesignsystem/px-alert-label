@@ -43,11 +43,11 @@ function buildCSS(){
 }
 
 gulp.task('sass', function() {
-  return gulp.src(['./sass/*sketch.scss', '!./sass/*predix.scss', '!./sass/*-demo.scss'])
+  return gulp.src(['./sass/*.scss', '!./sass/*sketch.scss',])
     .pipe(buildCSS())
-    .pipe(gulpif(/.*sketch/,
+    .pipe(gulpif(/.*predix/,
       $.rename(function(path){
-        path.basename = new RegExp('.+?(?=\-sketch)').exec(path.basename)[0];
+        path.basename = new RegExp('.+?(?=\-predix)').exec(path.basename)[0];
       })
     ))
     .pipe(stylemod({
@@ -67,7 +67,7 @@ gulp.task('demosass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['!sass/*-demo.scss', 'sass/*.scss'], ['sass']);
+  gulp.watch(['sass/*.scss'], ['sass']);
   gulp.watch('sass/*-demo.scss', ['demosass']);
 });
 

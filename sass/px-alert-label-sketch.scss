@@ -19,9 +19,6 @@ THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PRE
 Predix branding rules go in px-alert-label-predix.scss, not in this file.
 */
 
-// Settings
-@import "px-colors-design/_settings.colors.scss";
-
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
 @import "px-box-sizing-design/_generic.box-sizing.scss";
@@ -32,14 +29,18 @@ Predix branding rules go in px-alert-label-predix.scss, not in this file.
 @import "px-viewport-design/_base.viewport.scss";
 
 // Component
-$inuit-enable-alertlabel--important        : true;
-$inuit-enable-alertlabel--warning          : true;
-$inuit-enable-alertlabel--error            : true;
-$inuit-enable-alertlabel--info             : true;
-$inuit-enable-alertlabel--healthy          : true;
-$inuit-enable-alertlabel--healthy-inverted : true;
-$inuit-enable-alertlabel--unknown          : true;
-@import "alert-labels.scss";
+.alertlabel {
+  display: inline-block;
+  overflow: visible;
+  padding: 6px 6px 4px 6px;
+  font: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: bold;
+}
 
 // Trumps
 @import "inuit-clearfix/_trumps.clearfix.scss";

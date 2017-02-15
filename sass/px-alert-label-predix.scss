@@ -20,15 +20,45 @@ common/abstract rules go in px-alert-label-sketch.scss, not in this file.
 */
 
 // Settings
-@import "px-defaults-design/_settings.defaults.scss";
 @import "px-colors-design/_settings.colors.scss";
+@import "px-alert-label-sketch.scss";
 
-$inuit-enable-alertlabel--important        : true;
-$inuit-enable-alertlabel--warning          : true;
-$inuit-enable-alertlabel--error            : true;
-$inuit-enable-alertlabel--info             : true;
-$inuit-enable-alertlabel--healthy          : true;
-$inuit-enable-alertlabel--healthy-inverted : true;
-$inuit-enable-alertlabel--unknown          : true;
+.alertlabel {
+  background-color: var(--px-alert-label-background-color--alert, $alert-red);
+}
 
-@import 'alert-labels.scss';
+.alertlabel--important {
+  background-color: var(--px-alert-label-background-color--alert, $alert-red);
+  color: var(--px-alert-label-text-color--alert, $white);
+}
+
+.alertlabel--warning {
+  background-color: var(--px-alert-label-background-color--warning, $alert-orange);
+  color: var(--px-alert-label-text-color--warning, $white);
+}
+
+.alertlabel--error {
+  background-color: var(--px-alert-label-background-color--error, $alert-yellow);
+  color: var(--px-alert-label-text-color--error, $white);
+}
+
+.alertlabel--info {
+  background-color: var(--px-alert-label-background-color--info, $alert-blue);
+  color: var(--px-alert-label-text-color--info, $white);
+}
+
+.alertlabel--healthy {
+  background-color: var(--px-alert-label-background-color--healthy, $white);
+  color: var(--px-alert-label-text-color--healthy, $black);
+  border: 2px solid var(--px-alert-label-border-color--healthy, $gray5);
+  }
+
+.alertlabel--healthy-inverted {
+  background-color: var(--px-alert-label-background-color--inverted, $black);
+  color: var(--px-alert-label-text-color--inverted, $white);
+}
+
+.alertlabel--unknown {
+  background-color: var(--px-alert-label-background-color--unknown, $gray5);
+  color: var(--px-alert-label-text-color--unknown, $white);
+}

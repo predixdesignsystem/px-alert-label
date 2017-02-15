@@ -1,3 +1,7 @@
+v1.2.3
+=================
+* standardized sass to match other Px components
+
 v1.2.2
 =================
 * Updating colors and rebuilding CSS/demo CSS
