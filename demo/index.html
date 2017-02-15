@@ -1,0 +1,118 @@
+<!-- Common imports -->
+<link rel="import" href="../../polymer/polymer.html" />
+<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
+
+<!-- Common demo imports -->
+<link rel="import" href="../../px-demo/px-demo-header.html" />
+<link rel="import" href="../../px-demo/px-demo-api-viewer.html" />
+<link rel="import" href="../../px-demo/px-demo-footer.html" />
+<link rel="import" href="../../px-demo/px-demo-configs.html" />
+<link rel="import" href="../../px-demo/px-demo-props.html" />
+<link rel="import" href="../../px-demo/px-demo-interactive.html" />
+<link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
+
+<!-- Imports for this componnent -->
+<link rel="import" href="../../px-demo/css/px-demo-styles.html" />
+<link rel="import" href="../px-alert-label.html" />
+
+<!-- Demo DOM module -->
+<dom-module id="local-element-demo">
+  <template>
+    <style include="px-demo-styles" is="custom-style"></style>
+
+    <!-- Header -->
+    <px-demo-header
+        module-name="px-alert-label"
+        description="Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of
+        label (important, warning, error, information, healthy, healthy inverted, and unknown) has its own distinct
+        background color and appropriate font color for maximum visibility. The text within the label is configurable,
+        but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may
+        confuse the label for a button.">
+    </px-demo-header>
+
+    <!-- Interactive -->
+    <px-demo-interactive>
+      <!-- Configs -->
+      <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+
+      <!-- Props -->
+      <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+
+      <!-- Component ---------------------------------------------------------->
+      <px-demo-component>
+
+        <div>
+          <px-alert-label
+              type="{{props.type.value}}"
+              label="{{props.label.value}}">
+          </px-alert-label>
+        </div>
+      </px-demo-component>
+      <!-- END Component ------------------------------------------------------>
+
+      <px-demo-component-snippet
+          element-properties="{{props}}"
+          element-name="px-alert-label">
+      </px-demo-component-snippet>
+    </px-demo-interactive>
+
+    <!-- API Viewer -->
+    <px-demo-api-viewer source="px-alert-label"></px-demo-api-viewer>
+
+    <!-- Footer -->
+    <px-demo-footer></px-demo-footer>
+
+  </template>
+
+</dom-module>
+<script>
+  Polymer({
+    is: 'local-element-demo',
+
+    properties: {
+
+      props: {
+        type: Object,
+        value: function(){ return this.demoProps; }
+      },
+
+      configs: {
+        type: Array,
+        value: function(){
+          return [
+            { configName: "Important",
+              configReset: true },
+
+            { configName: "Info",
+              type: "info",
+              label: "Information" },
+
+            { configName: "Warning",
+              type: "warning",
+              label: "Uh oh!" }
+          ]
+        }
+      }
+    },
+
+    /**
+     * A reference for `this.props`. Read the documentation there.
+     */
+    demoProps: {
+
+      label: {
+        type: String,
+        defaultValue: 'Caution!',
+        inputType: 'text'
+      },
+
+      type: {
+        type: String,
+        defaultValue: 'Important',
+        inputType: 'dropdown',
+        inputChoices: ['important', 'warning', 'error', 'info', 'healthy', 'healthy-inverted', 'unknown']
+      }
+    }
+
+  });
+</script>

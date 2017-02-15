@@ -1,3 +1,7 @@
+v1.2.4
+=================
+* updated to px-demo
+
 v1.2.3
 =================
 * standardized sass to match other Px components

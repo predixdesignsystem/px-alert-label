@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>px-alert-label Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/px-alert-label-demo.css"/>
+  <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../px-theme/px-theme-styles.html">
+  <style include="px-theme-styles" is="custom-style"></style>
+
+  <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
+  <link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
+  <link rel="import" href="../px-tabs/px-tab-set.html" />
+  <link rel="import" href="px-alert-label.html"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="import" href="../px-demo-snippet/px-demo-snippet.html">
+  <link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html">
+  <link rel="import" href="../px-dropdown/px-dropdown.html" />
+  <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+
+  </head>
+
+<body>
+
+  <!-- Wrap elements with auto-binding template to -->
+  <!-- allow use of Polymer bindings in main document -->
+  <template id="just-for-demo" is="dom-bind" >
+
+    <!-- discription -->
+    <div class="hero u-p++ text--shadow">
+      <a class="actionable flex flex--right flex--middle" href="https://github.com/PredixDev/px-alert-label" target="_blank"><iron-icon class="menu__open" icon="fa:fa-github"></iron-icon>View on Github</a>
+  		<h1 class="delta">px-alert-label</h1>
+      <div class="description-text">
+    		<p>
+    			Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of
+          label (important, warning, label, information, healthy, healthy inverted, and unknown) has its own distinct
+          background color and appropriate font color for maximum visibility. The text within the label is configurable,
+          but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may
+          confuse the label for a button.
+    		</p>
+      </div>
+  		<div class="flex">
+  			<img class="u-mr--" src="https://img.shields.io/travis/PredixDev/px-alert-label.svg?style=flat-square" alt="Travis"/>
+  			<img class="u-mr--" src="https://img.shields.io/bower/v/px-alert-label.svg?style=flat-square" alt="Bower"/>
+  			<img class="u-mr--" src="https://img.shields.io/github/issues-raw/PredixDev/px-alert-label.svg?style=flat-square" alt="Issues"/>
+  		</div>
+  	</div>
+
+    <!-- mega demo -->
+    <div style="position: relative;" class="u-pb++ flex flex--col" id="defaultTab">
+      <div class="tabContainer u-pt++ u-pl++">
+        <px-tab-set selected="{{selected}}" bare no-bottom-border>
+          <template is="dom-repeat" items="{{optionsArray}}">
+            <px-tab>Option {{indexPlusOne(index)}}</px-tab>
+          </template>
+        </px-tab-set>
+      </div>
+      <px-tab-pages selected="{{selected}}">
+        <template is="dom-repeat" items="{{optionsArray}}">
+          <section class="tab-page">
+            <div class="mega-demo flex u-ph++ u-pb++">
+              <!-- Properties -->
+              <div class="properties u-ph+ u-pb+ u-mt+">
+                <p class="epsilon">Properties</p>
+                <div class="u-mb-">Label: <input id="label{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="Label" value="{{item.label::input}}" /></div>
+                <div class="flex">Type:</div>
+                <div class="flex u-mb-">
+                  <px-dropdown id="type{{indexPlusOne(index)}}" style="width:100%;" value="{{item.type}}" display-value="Select">
+                    <px-dropdown-content
+                    items={{items}}>
+                  </px-dropdown-content>
+                  </px-dropdown>
+                </div>
+              </div>
+
+              <div class="demoContainer u-mt+">
+                  <!-- demo -->
+                  <div class="flex flex--col">
+                    <div class="demo u-p+">
+
+                    <px-alert-label
+                      id="label"
+                      type="{{item.type}}"
+                      label="{{item.label}}">
+                    </px-alert-label>
+                  </div>
+                  <div>
+                    <px-demo-snippet
+                      element-properties={{item}}
+                      element-name="px-alert-label">
+                    </px-demo-snippet>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apiContainer">
+              <div class="flex flex--col api u-mt++" >
+                <div>
+                  <px-api-viewer source="px-alert-label"></px-api-viewer>
+                </div>
+              </div>
+            </div>
+          </section>
+        </template>
+      </px-tab-pages>
+    </div>
+    <footer class="footer flex flex--center">
+      <div class="footer__container u-pv++">
+        <div>
+          <a href="https://ge.com/digital" >
+            <img src="monogram-wdmk.png" alt="GE Monogram" class="footer__img">
+          </a>
+        </div>
+        <div class="footer__list">
+          <ul class="list-inline list-inline--delimited">
+            <li>
+              <a href="http://predix.io/legal" class="footer__list--lnk">Legal</a>
+            </li>
+            <li>
+              <a href="mailto:info@predix.io" class="footer__list--lnk">Contact Us</a>
+            </li>
+            <li>Copyright &copy; 2016 General Electric Company. All rights reserved.</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </template>
+<script>
+window.addEventListener('WebComponentsReady', function() {
+  var template = document.querySelector('template[is=dom-bind]'),
+      type = "important",
+      label = "Caution!",
+      items = [
+        {"key":"one","val":"Important"},
+        {"key":"two","val":"Warning"},
+        {"key":"three","val":"Error"},
+        {"key":"four","val":"Info"},
+        {"key":"five","val":"Healthy"},
+        {"key":"six","val":"Healthy-inverted"},
+        {"key":"seven","val":"Unknown"},
+      ],
+      optionsArray = [
+        {
+          "type":"important",
+          "label":"Caution!"
+        },
+        {
+          "type":"info",
+          "label":"Information"
+        }
+      ],
+      indexPlusOne = function(num) {
+        return num + 1;
+      };
+
+
+  template.selected = "0";
+  template.optionsArray = optionsArray;
+  template.indexPlusOne = indexPlusOne;
+  template.items = items;
+
+});
+</script>
+
+</body>
+</html>
