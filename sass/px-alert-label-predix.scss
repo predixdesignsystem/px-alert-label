@@ -24,26 +24,26 @@ common/abstract rules go in px-alert-label-sketch.scss, not in this file.
 @import "px-alert-label-sketch.scss";
 
 .alertlabel {
-  background-color: var(--px-alert-label-background-color--alert, $alert-red);
+  background-color: var(--px-alert-label-background-color--alert, $status-red3);
 }
 
 .alertlabel--important {
-  background-color: var(--px-alert-label-background-color--alert, $alert-red);
+  background-color: var(--px-alert-label-background-color--alert, $status-red3);
   color: var(--px-alert-label-text-color--alert, $white);
 }
 
 .alertlabel--warning {
-  background-color: var(--px-alert-label-background-color--warning, $alert-orange);
+  background-color: var(--px-alert-label-background-color--warning, $status-orange3);
   color: var(--px-alert-label-text-color--warning, $white);
 }
 
 .alertlabel--error {
-  background-color: var(--px-alert-label-background-color--error, $alert-yellow);
+  background-color: var(--px-alert-label-background-color--error, $status-yellow3);
   color: var(--px-alert-label-text-color--error, $white);
 }
 
 .alertlabel--info {
-  background-color: var(--px-alert-label-background-color--info, $alert-blue);
+  background-color: var(--px-alert-label-background-color--info, $status-blue3);
   color: var(--px-alert-label-text-color--info, $white);
 }
 
@@ -59,6 +59,6 @@ common/abstract rules go in px-alert-label-sketch.scss, not in this file.
 }
 
 .alertlabel--unknown {
-  background-color: var(--px-alert-label-background-color--unknown, $gray5);
+  background-color: var(--px-alert-label-background-color--unknown, $gray6);
   color: var(--px-alert-label-text-color--unknown, $white);
 }
