@@ -2,6 +2,7 @@ v2.0.0
 =================
 * update dependencies and colors for design refresh
 * add badge property for enabling severity badges
+* changed info to information to match alert-message
 
 v1.2.4
 =================

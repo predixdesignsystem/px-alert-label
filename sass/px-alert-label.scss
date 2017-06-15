@@ -48,7 +48,7 @@
   color: var(--px-alert-label-text-color--error, black);
 }
 
-.info {
+.information {
   background-color: var(--px-alert-label-background-color--info, blue);
   color: var(--px-alert-label-text-color--info, white);
 }
@@ -92,7 +92,7 @@
       transform: rotate(-45deg);
     }
   }
-  &.info {
+  &.information {
     height: 0;
     width: calculateRem(4px);
     box-sizing: content-box;
