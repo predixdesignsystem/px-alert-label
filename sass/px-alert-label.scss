@@ -99,8 +99,8 @@
     position: relative;
     top: calculateRem(12px);
     border: calculateRem(8px) solid rgba(0,0,0,0);
-    border-top: calculateRem(17px) solid var(--px-alert-label-background-color--info, blue);
-    border-bottom: 0 solid var(--px-alert-label-background-color--info, blue);
+    border-top: calculateRem(17px) solid var(--px-alert-label-background-color--information, blue);
+    border-bottom: 0 solid var(--px-alert-label-background-color--information, blue);
     background: none;
     &:before {
       width: 0;
@@ -110,7 +110,7 @@
       bottom: calculateRem(27px);
       left: calculateRem(-8px);
       border: calculateRem(15px) solid rgba(0,0,0,0);
-      border-bottom: calculateRem(11px) solid var(--px-alert-label-background-color--info, blue);
+      border-bottom: calculateRem(11px) solid var(--px-alert-label-background-color--information, blue);
     }
     .label {
       position: absolute;
