@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+// Settings
+@import "px-colors-design/_settings.colors.scss";
+
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+@import "px-flexbox-design/_base.flexbox.scss";
+@import "px-viewport-design/_base.viewport.scss";
+
+// Component
+
+.alertlabel {
+  display: block;
+  padding: calculateRem(5px);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  background-color: var(--px-alert-label-background-color--important, red);
+  color: var(--px-alert-label-text-color--important, white);
+}
+
+.important {
+  background-color: var(--px-alert-label-background-color--important, red);
+  color: var(--px-alert-label-text-color--important, white);
+}
+
+.warning {
+  background-color: var(--px-alert-label-background-color--warning, orange);
+  color: var(--px-alert-label-text-color--warning, white);
+}
+
+.error {
+  background-color: var(--px-alert-label-background-color--error, yellow);
+  color: var(--px-alert-label-text-color--error, black);
+}
+
+.info {
+  background-color: var(--px-alert-label-background-color--info, blue);
+  color: var(--px-alert-label-text-color--info, white);
+}
+
+.healthy {
+  background-color: var(--px-alert-label-background-color--healthy, green);
+  color: var(--px-alert-label-text-color--healthy, white);
+}
+
+.unknown {
+  background-color: var(--px-alert-label-background-color--unknown, gray);
+  color: var(--px-alert-label-text-color--unknown, white);
+}
+
+.badge {
+  position: relative;
+  height:  1.9rem;
+  width:  1.9rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  &.important {
+    padding:0;
+    width: 0;
+    height: 0;
+    background: none;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1.75rem solid var(--px-alert-label-background-color--important, red);
+    .label {
+      position: absolute;
+      top: calculateRem(5px);
+      left: calculateRem(-4px);
+    }
+  }
+  &.warning {
+    transform: rotate(45deg);
+    height: calculateRem(24px);
+    width: calculateRem(24px);
+    .label {
+      display: block;
+      transform: rotate(-45deg);
+    }
+  }
+  &.info {
+    height: 0;
+    width: calculateRem(4px);
+    box-sizing: content-box;
+    position: relative;
+    top: calculateRem(12px);
+    border: calculateRem(8px) solid rgba(0,0,0,0);
+    border-top: calculateRem(17px) solid var(--px-alert-label-background-color--info, blue);
+    border-bottom: 0 solid var(--px-alert-label-background-color--info, blue);
+    background: none;
+    &:before {
+      width: 0;
+      height: 0;
+      position: absolute;
+      content: "";
+      bottom: calculateRem(27px);
+      left: calculateRem(-8px);
+      border: calculateRem(15px) solid rgba(0,0,0,0);
+      border-bottom: calculateRem(11px) solid var(--px-alert-label-background-color--info, blue);
+    }
+    .label {
+      position: absolute;
+      top: calculateRem(-20px);
+      left: calculateRem(2px);
+    }
+  }
+  &.unknown {
+    border-radius: 1rem;
+  }
+}
+
+// Trumps
+@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+@import "px-widths-responsive-design/_trumps.widths-responsive.scss";

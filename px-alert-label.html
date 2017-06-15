@@ -9,32 +9,29 @@
 
 
 <!--
-Element renders an alert label from a predefined set of alerts.
 
-##### Usage
+### Usage
 
-    <px-alert-label type="important"></px-alert-label>
+    <px-alert-label type="important" label="Oops!"></px-alert-label>
+    <px-alert-label type="warning" label="2" badge="true"></px-alert-label>
 
 ### Styling
 The following custom properties are available for styling:
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--px-alert-label-text-color--alert` | Text color for 'alert' type labels | `$white`
-`--px-alert-label-background-color--alert` | Background color for 'alert' type labels | `$alert-red`
-`--px-alert-label-text-color--warning` | Text color for 'warning' type labels | `$white`
-`--px-alert-label-background-color--warning` | Background color for 'warning' type labels | `$alert-orange`
-`--px-alert-label-text-color--error` | Text color for 'error' type labels | `$white`
-`--px-alert-label-background-color--error` | Background color for 'error' type labels | `$alert-yellow`
-`--px-alert-label-text-color--info` | Text color for 'info' type labels | `$white`
-`--px-alert-label-background-color--info` | Background color for 'info' type labels | `$alert-blue`
-`--px-alert-label-text-color--healthy` | Text color for 'healthy' type labels | `$black`
-`--px-alert-label-background-color--healthy` | Background color for 'healthy' type labels | `$white`
-`--px-alert-label-border-color--healthy` | Border color for 'healthy' type labels | `$gray5`
-`--px-alert-label-text-color--inverted` | Text color for 'healthy-inverted' type labels | `$white`
-`--px-alert-label-background-color--inverted` | Background color for 'healthy-inverted' type labels | `$black`
-`--px-alert-label-text-color--unknown` | Text color for 'unknown' type labels | `$white`
-`--px-alert-label-background-color--unknown` | Background color for 'unknown' type labels | `$gray5`
+Custom property | Description
+----------------|-------------
+`--px-alert-label-background-color--alert` | Background color for 'alert' type labels
+`--px-alert-label-text-color--alert` | Text color for 'alert' type labels
+`--px-alert-label-background-color--warning` | Background color for 'warning' type labels
+`--px-alert-label-text-color--warning` | Text color for 'warning' type labels
+`--px-alert-label-background-color--error` | Background color for 'error' type labels
+`--px-alert-label-text-color--error` | Text color for 'error' type labels
+`--px-alert-label-background-color--info` | Background color for 'info' type labels
+`--px-alert-label-text-color--info` | Text color for 'info' type labels
+`--px-alert-label-background-color--healthy` | Background color for 'healthy' type labels
+`--px-alert-label-text-color--healthy` | Text color for 'healthy' type labels
+`--px-alert-label-background-color--unknown` | Background color for 'unknown' type labels
+`--px-alert-label-text-color--unknown` | Text color for 'unknown' type labels
 
 @element px-alert-label
 @blurb renders an alert label
@@ -47,8 +44,10 @@ Custom property | Description | Default
 <dom-module id="px-alert-label">
   <template>
     <style include="px-alert-label-styles"></style>
-    
-    <span class$="{{_alertStyle}}">{{label}}</span>
+
+    <span class$="alertlabel {{type}} {{_badge}}">
+      <span class="label">{{label}}</span>
+    </span>
   </template>
 </dom-module>
 
@@ -57,65 +56,35 @@ Custom property | Description | Default
 
     is: 'px-alert-label',
 
-    /**
-     * Properties block, expose attribute values to the DOM via 'reflect'
-     *
-     * @property properties
-     * @type Object
-     */
     properties: {
       /**
        * The type of alert label defines the visual styling.
-       * Should be one of important, warning, error, info, healthy, healthy-inverted or unknown.
-       *
-       * @property type
-       * @type String
+       * Should be one of important, warning, error, info, healthy, or unknown.
        */
       type: String,
 
       /**
        * The text to display inside of the label.
-       *
-       * @property label
-       * @type String
        */
       label: String,
 
       /**
-       * Computed class names that correspond to each label type.
-       *
-       * @property _alertStyle
-       * @type String
-       * @reflect true
-       * @computed _computeAlertStyle(type)
+       * If set to true, the label will appear as a triangle, diamond, square, pentagon, or circle
+       * to indicate the severity of an alert, for instance.
        */
-      _alertStyle: {
+      badge: {
+        type: Boolean,
+        value: false
+      },
+
+      _badge: {
         type: String,
-        reflect: true,
-        computed: '_computeAlertStyle(type)'
+        computed: '_getBadgeString(badge)'
       }
     },
-
-    /**
-     * Computes class names that correspond to each label type.
-     *
-     * @method _computeAlertStyle
-     * @param type
-     */
-    _computeAlertStyle: function(type) {
-      var typeLowercase = type.toLowerCase();
-      switch (typeLowercase) {
-        case 'important':
-        case 'warning':
-        case 'error':
-        case 'info':
-        case 'healthy':
-        case 'healthy-inverted':
-        case 'unknown':
-          return 'alertlabel alertlabel--' + typeLowercase;
-        default:
-          return '';
-      }
+    _getBadgeString: function(badge) {
+      return badge ? 'badge' : '';
     }
+
   });
 </script>

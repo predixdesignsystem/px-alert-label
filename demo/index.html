@@ -1,6 +1,5 @@
 <!-- Common imports -->
 <link rel="import" href="../../polymer/polymer.html" />
-<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
 
 <!-- Common demo imports -->
 <link rel="import" href="../../px-demo/px-demo-header.html" />
@@ -23,8 +22,8 @@
     <!-- Header -->
     <px-demo-header
         module-name="px-alert-label"
-        description="Alert Labels are used to draw attention to a particular piece of information on the screen. Each type of
-        label (important, warning, error, information, healthy, healthy inverted, and unknown) has its own distinct
+        description="Alert labels are used to draw attention to a particular piece of information on the screen. Each type of
+        label (important, warning, error, information, healthy, and unknown) has its own distinct
         background color and appropriate font color for maximum visibility. The text within the label is configurable,
         but will always show up in all capital letters. Avoid using action verbs in an alert label, as users may
         confuse the label for a button.">
@@ -44,7 +43,8 @@
         <div>
           <px-alert-label
               type="{{props.type.value}}"
-              label="{{props.label.value}}">
+              label="{{props.label.value}}"
+              badge="{{props.badge.value}}">
           </px-alert-label>
         </div>
       </px-demo-component>
@@ -80,16 +80,13 @@
         type: Array,
         value: function(){
           return [
-            { configName: "Important",
+            { configName: "Important label",
               configReset: true },
 
-            { configName: "Info",
-              type: "info",
-              label: "Information" },
-
-            { configName: "Warning",
+            { configName: "Warning badge",
               type: "warning",
-              label: "Uh oh!" }
+              badge: true,
+              label: "2" }
           ]
         }
       }
@@ -108,9 +105,15 @@
 
       type: {
         type: String,
-        defaultValue: 'Important',
+        defaultValue: 'important',
         inputType: 'dropdown',
-        inputChoices: ['important', 'warning', 'error', 'info', 'healthy', 'healthy-inverted', 'unknown']
+        inputChoices: ['important', 'warning', 'error', 'info', 'unknown', 'healthy']
+      },
+
+      badge: {
+        type: Boolean,
+        defaultValue: false,
+        inputType: 'toggle'
       }
     }
 

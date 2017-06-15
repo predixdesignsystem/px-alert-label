@@ -1,6 +1,7 @@
 v2.0.0
 =================
 * update dependencies and colors for design refresh
+* add badge property for enabling severity badges
 
 v1.2.4
 =================
