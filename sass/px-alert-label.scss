@@ -79,7 +79,7 @@
     border-bottom: 1.75rem solid var(--px-alert-label-background-color--important, red);
     .label {
       position: absolute;
-      top: calculateRem(5px);
+      top: calculateRem(8px);
       left: calculateRem(-4px);
     }
   }
