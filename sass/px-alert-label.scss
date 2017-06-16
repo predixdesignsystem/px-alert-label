@@ -9,7 +9,6 @@
  */
 
 // Settings
-@import "px-colors-design/_settings.colors.scss";
 
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
@@ -31,95 +30,85 @@
   line-height: 0.8rem;
   background-color: var(--px-alert-label-background-color--important, red);
   color: var(--px-alert-label-text-color--important, white);
+  border: 1px solid var(--px-alert-label-border-color, transparent);
+}
+
+.svg-canvas {
+  width: 2.2rem;
+  height: 2.2rem;
+  #polygon {
+    stroke-width: 1px;
+    stroke: var(--px-alert-label-border-color, transparent);
+  }
+}
+
+.badge {
+  padding: 0;
+  .label {
+    position: relative;
+    font-weight: bold;
+    left: calculateRem(-22px);
+    top: calculateRem(-12px);
+  }
 }
 
 .important {
   background-color: var(--px-alert-label-background-color--important, red);
   color: var(--px-alert-label-text-color--important, white);
+  &.badge {
+    background: none;
+    fill: var(--px-alert-label-background-color--important, red);
+    .label {
+      top: calculateRem(-9px);
+    }
+  }
 }
 
 .warning {
   background-color: var(--px-alert-label-background-color--warning, orange);
   color: var(--px-alert-label-text-color--warning, white);
+  &.badge {
+    background: none;
+    fill: var(--px-alert-label-background-color--warning, orange);
+  }
 }
 
 .error {
   background-color: var(--px-alert-label-background-color--error, yellow);
   color: var(--px-alert-label-text-color--error, black);
+  &.badge {
+    background: none;
+    fill: var(--px-alert-label-background-color--error, yellow);
+  }
 }
 
 .information {
   background-color: var(--px-alert-label-background-color--information, blue);
   color: var(--px-alert-label-text-color--information, white);
+  &.badge {
+    background: none;
+    fill: var(--px-alert-label-background-color--information, blue);
+    .label {
+      top: calculateRem(-10px);
+    }
+  }
 }
 
 .healthy {
   background-color: var(--px-alert-label-background-color--healthy, green);
   color: var(--px-alert-label-text-color--healthy, white);
+  &.badge {
+    background: none;
+    fill: var(--px-alert-label-background-color--healthy, green);
+  }
 }
 
 .unknown {
   background-color: var(--px-alert-label-background-color--unknown, gray);
   color: var(--px-alert-label-text-color--unknown, white);
-}
-
-.badge {
-  position: relative;
-  height:  1.9rem;
-  width:  1.9rem;
-  font-size: 1rem;
-  line-height: 1rem;
-  &.important {
-    padding:0;
-    width: 0;
-    height: 0;
+  &.badge {
     background: none;
-    border-left: 1rem solid transparent;
-    border-right: 1rem solid transparent;
-    border-bottom: 1.75rem solid var(--px-alert-label-background-color--important, red);
-    .label {
-      position: absolute;
-      top: calculateRem(8px);
-      left: calculateRem(-4px);
-    }
-  }
-  &.warning {
-    transform: rotate(45deg);
-    height: calculateRem(24px);
-    width: calculateRem(24px);
-    .label {
-      display: block;
-      transform: rotate(-45deg);
-    }
-  }
-  &.information {
-    height: 0;
-    width: calculateRem(4px);
-    box-sizing: content-box;
-    position: relative;
-    top: calculateRem(12px);
-    border: calculateRem(8px) solid rgba(0,0,0,0);
-    border-top: calculateRem(17px) solid var(--px-alert-label-background-color--information, blue);
-    border-bottom: 0 solid var(--px-alert-label-background-color--information, blue);
-    background: none;
-    &:before {
-      width: 0;
-      height: 0;
-      position: absolute;
-      content: "";
-      bottom: calculateRem(27px);
-      left: calculateRem(-8px);
-      border: calculateRem(15px) solid rgba(0,0,0,0);
-      border-bottom: calculateRem(11px) solid var(--px-alert-label-background-color--information, blue);
-    }
-    .label {
-      position: absolute;
-      top: calculateRem(-20px);
-      left: calculateRem(2px);
-    }
-  }
-  &.unknown {
-    border-radius: 1rem;
+    fill: var(--px-alert-label-backgorund-color--unknown, gray);
   }
 }
 

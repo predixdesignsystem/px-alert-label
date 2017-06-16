@@ -20,6 +20,7 @@ The following custom properties are available for styling:
 
 Custom property | Description
 ----------------|-------------
+`--px-alert-label-border-color` | Border or outline color for all labels
 `--px-alert-label-background-color--alert` | Background color for 'alert' type labels
 `--px-alert-label-text-color--alert` | Text color for 'alert' type labels
 `--px-alert-label-background-color--warning` | Background color for 'warning' type labels
@@ -46,6 +47,11 @@ Custom property | Description
     <style include="px-alert-label-styles"></style>
 
     <span class$="alertlabel {{type}} {{_badge}}">
+      <template is="dom-if" if="{{badge}}">
+        <svg class="svg-canvas">
+          <polygon id="polygon" points$="{{_getPoints(type)}}"/>
+        </svg>
+      </template>
       <span class="label">{{label}}</span>
     </span>
   </template>
@@ -84,6 +90,20 @@ Custom property | Description
     },
     _getBadgeString: function(badge) {
       return badge ? 'badge' : '';
+    },
+    _getPoints: function(type) {
+      if(type === 'important') {
+        return '16.5,3 32,30 1,30';
+      }
+      else if(type === 'warning') {
+        return '16,0.5 32.5,16 16,32.5, 0.5,16';
+      }
+      else if(type === 'information') {
+        return '6.6,32.5 26.4,32.5 32.5,13 16,0.5 0.5,13';
+      }
+      else {
+        return '3,3 3,30 30,30 30,3';
+      }
     }
 
   });
