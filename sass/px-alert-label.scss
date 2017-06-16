@@ -13,16 +13,14 @@
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
 @import "px-box-sizing-design/_generic.box-sizing.scss";
-@import "px-helpers-design/_generic.helpers.scss";
 
 // Base
-@import "px-flexbox-design/_base.flexbox.scss";
-@import "px-viewport-design/_base.viewport.scss";
 
 // Component
 
 .alertlabel {
   display: block;
+  position: relative;
   padding: calculateRem(5px);
   text-transform: uppercase;
   text-align: center;
@@ -45,10 +43,10 @@
 .badge {
   padding: 0;
   .label {
-    position: relative;
+    position: absolute;
     font-weight: bold;
-    left: calculateRem(-22px);
-    top: calculateRem(-12px);
+    left: calculateRem(13px);
+    top: calculateRem(11px);
   }
 }
 
@@ -60,7 +58,7 @@
     border: none;
     fill: var(--px-alert-label-background-color--important, red);
     .label {
-      top: calculateRem(-9px);
+      top: calculateRem(13px);
     }
   }
 }
@@ -92,9 +90,6 @@
     background: none;
     border: none;
     fill: var(--px-alert-label-background-color--information, blue);
-    .label {
-      top: calculateRem(-10px);
-    }
   }
 }
 
@@ -119,5 +114,3 @@
 }
 
 // Trumps
-@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
-@import "px-widths-responsive-design/_trumps.widths-responsive.scss";

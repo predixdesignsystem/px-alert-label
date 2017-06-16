@@ -1,31 +1,32 @@
 {
-    "name": "px-alert-label",
-    "version": "2.0.0",
-    "main": [
-        "px-alert-label.html"
-    ],
-    "ignore": [
+  "name": "px-alert-label",
+  "version": "2.0.0",
+  "main": [
+    "px-alert-label.html"
+  ],
+  "ignore": [
     "*.enc",
-        ".*",
-        "node_modules",
-        "bower_components",
-        "sass",
-        "*.md",
-        "scripts",
-        ".github",
-        "gulpfile.js",
-        "wct.conf.json",
-        "test",
-        "OSS_Notice.pdf",
-        "*.png",
-        "npm-debug.log"
-    ],
-    "dependencies": {
-        "polymer": "^v1.6.0"
-    },
-    "devDependencies": {
-        "px-theme": "^3.0.0",
-        "px-starter-kit-design": "^1.0.0",
-        "px-demo": "^2.0.0"
-    }
+    ".*",
+    "node_modules",
+    "bower_components",
+    "sass",
+    "*.md",
+    "scripts",
+    ".github",
+    "gulpfile.js",
+    "wct.conf.json",
+    "test",
+    "OSS_Notice.pdf",
+    "*.png",
+    "npm-debug.log"
+  ],
+  "dependencies": {
+    "polymer": "^v1.6.0"
+  },
+  "devDependencies": {
+    "px-theme": "^3.0.0",
+    "px-starter-kit-design": "^1.0.0",
+    "px-demo": "^2.0.0",
+    "px-normalize-design": "^1.0.0"
+  }
 }
