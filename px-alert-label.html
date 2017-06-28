@@ -48,9 +48,16 @@ Custom property | Description
 
     <span class$="alertlabel {{type}} {{_badge}}">
       <template is="dom-if" if="{{badge}}">
-        <svg class="svg-canvas">
-          <polygon id="polygon" points$="{{_getPoints(type)}}"/>
-        </svg>
+        <template is="dom-if" if="{{!_isCircle(type)}}">
+          <svg class="svg-canvas">
+            <polygon id="polygon" points$="{{_getPoints(type)}}"/>
+          </svg>
+        </template>
+        <template is="dom-if" if="{{_isCircle(type)}}">
+          <svg class="svg-canvas">
+            <circle id="circle" cx="16" cy="16" r="15"/>
+          </svg>
+        </template>
       </template>
       <span class="label">{{label}}</span>
     </span>
@@ -70,7 +77,8 @@ Custom property | Description
       type: String,
 
       /**
-       * The text to display inside of the label.
+       * The text to display inside of the label. When the 'badge' configuration is used,
+       * only one digit should be used for the label to indicate severity.
        */
       label: String,
 
@@ -104,6 +112,9 @@ Custom property | Description
       else {
         return '3,3 3,30 30,30 30,3';
       }
+    },
+    _isCircle: function(type) {
+      return type === 'unknown';
     }
 
   });
