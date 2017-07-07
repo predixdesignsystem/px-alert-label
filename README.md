@@ -1,4 +1,4 @@
-Px-Alert-Label [![Build Status](https://travis-ci.org/PredixDev/px-alert-label.svg?branch=master)](https://travis-ci.org/PredixDev/px-alert-label)
+# px-alert-label [![Build Status](https://travis-ci.org/PredixDev/px-alert-label.svg?branch=master)](https://travis-ci.org/PredixDev/px-alert-label)
 -----------------------------------------------
 
 ## Overview
