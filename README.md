@@ -1,10 +1,9 @@
 Px-Alert-Label [![Build Status](https://travis-ci.org/PredixDev/px-alert-label.svg?branch=master)](https://travis-ci.org/PredixDev/px-alert-label)
 -----------------------------------------------
-[![px-alert-label demo](px-alert-label.png?raw=true)](https://github.com/PredixDev/px-alert-label)
 
 ## Overview
 
-Px-Alert-Label is a Predix Experience ('Px') component
+Px-alert-label is used to draw attention to a particular piece of information on the screen.
 
 ## Usage
 
@@ -38,7 +37,8 @@ Finally, use the component in your application:
 
 <br />
 <hr />
-## documentation
+
+## Documentation
 
 Read the full API and view the demo [here](https://predixdev.github.io/px-alert-label).
 
