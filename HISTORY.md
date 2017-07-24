@@ -1,3 +1,11 @@
+v2.0.2
+=================
+* update readme
+
+v2.0.1
+=================
+* add backwards compatibility
+
 v2.0.0
 =================
 * update dependencies and colors for design refresh
