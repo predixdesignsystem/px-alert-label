@@ -82,7 +82,7 @@
   }
 }
 
-.information {
+.info, .information {
   background-color: var(--px-alert-label-background-color--information, blue);
   color: var(--px-alert-label-text-color--information, white);
   &.badge {
