@@ -3,7 +3,7 @@
 
 ## Overview
 
-Px-alert-label is used to draw attention to a particular piece of information on the screen.
+Px-alert-label is a Predix UI component used to draw attention to a particular piece of information on the screen.
 
 ## Usage
 
