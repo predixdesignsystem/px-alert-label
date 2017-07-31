@@ -100,7 +100,8 @@
       label: {
         type: String,
         defaultValue: 'Label text',
-        inputType: 'text'
+        inputType: 'text',
+        inputHelpText: 'Should be single digit for badges'
       },
 
       type: {
@@ -113,7 +114,9 @@
       badge: {
         type: Boolean,
         defaultValue: false,
-        inputType: 'toggle'
+        inputType: 'toggle',
+        inputDisabled: true,
+        inputHelpText: 'Use tabs above'
       }
     }
 

@@ -1,3 +1,7 @@
+v2.0.3
+=================
+* update demo for clarity
+
 v2.0.2
 =================
 * update readme
