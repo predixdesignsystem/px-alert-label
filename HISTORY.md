@@ -1,3 +1,7 @@
+v2.0.6
+=================
+* Fix comment block for docs
+
 v2.0.5
 =================
 * runtime demo theming
