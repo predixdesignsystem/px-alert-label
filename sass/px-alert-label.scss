@@ -43,9 +43,15 @@
 .badge {
   padding: 0;
   .label {
+    display: flex;
     position: absolute;
-    left: calculateRem(13px);
-    top: calculateRem(11px);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -57,7 +63,7 @@
     border: none;
     fill: var(--px-alert-label-background-color--important, red);
     .label {
-      top: calculateRem(13px);
+      top: calculateRem(8px);
     }
   }
 }
@@ -89,6 +95,9 @@
     background: none;
     border: none;
     fill: var(--px-alert-label-background-color--information, blue);
+    .label {
+      top: calculateRem(2px);
+    }
   }
 }
 
@@ -109,6 +118,9 @@
     background: none;
     border: none;
     fill: var(--px-alert-label-background-color--unknown, gray);
+    .label {
+      top: calculateRem(-1px);
+    }
   }
 }
 
