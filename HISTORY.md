@@ -1,3 +1,9 @@
+v2.0.7
+=================
+* Fix scaling bug that caused badge-style alert labels to crop their SVG
+  incorrectly and center their text incorrectly when a different font-face
+  or font-size was inherited from the document
+
 v2.0.6
 =================
 * Fix comment block for docs
