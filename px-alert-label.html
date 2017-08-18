@@ -39,12 +39,12 @@ Custom property | Description
     <span class$="alertlabel {{type}} {{_badge}}">
       <template is="dom-if" if="{{badge}}">
         <template is="dom-if" if="{{!_isCircle(type)}}">
-          <svg class="svg-canvas" viewbox="0 0 32 32">
+          <svg class="svg-canvas" viewbox="0 0 33 33">
             <polygon id="polygon" points$="{{_getPoints(type)}}"/>
           </svg>
         </template>
         <template is="dom-if" if="{{_isCircle(type)}}">
-          <svg class="svg-canvas" viewbox="0 0 32 32">
+          <svg class="svg-canvas" viewbox="0 0 33 33">
             <circle id="circle" cx="16" cy="16" r="15"/>
           </svg>
         </template>
