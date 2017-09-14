@@ -1,3 +1,7 @@
+v2.0.8
+=================
+* Fix width issue
+
 v2.0.7
 =================
 * Fix scaling bug that caused badge-style alert labels to crop their SVG
