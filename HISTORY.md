@@ -1,3 +1,7 @@
+v2.0.9
+=================
+* add device flags
+
 v2.0.8
 =================
 * Fix width issue
