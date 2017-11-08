@@ -34,6 +34,6 @@
     }
   },
   "suites": [
-    "test/px-alert-label-test-fixture.html"
+    "test/index.html"
   ]
 }
