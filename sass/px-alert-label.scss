@@ -38,8 +38,9 @@
 }
 
 .svg-canvas {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: var(--px-alert-label-width,2.2rem);
+  height:  var(--px-alert-label-height,2.2rem);
+  vertical-align: var(--px-alert-label-vertical-align, baseline);
   #polygon, #circle {
     stroke-width: 1px;
     stroke: var(--px-alert-label-border-color, transparent);
