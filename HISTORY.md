@@ -1,3 +1,7 @@
+v2.1.2
+=================
+* Add 3 sass variables (width, height, vertical-align) to style svg icons
+
 v2.1.1
 =================
 * Fix demo for IE
