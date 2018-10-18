@@ -1,5 +1,6 @@
-# px-alert-label [![Build Status](https://travis-ci.org/PredixDev/px-alert-label.svg?branch=master)](https://travis-ci.org/PredixDev/px-alert-label)
------------------------------------------------
+# px-alert-label [![Build Status](https://travis-ci.org/predixdesignsystem/px-alert-label.svg?branch=master)](https://travis-ci.org/predixdesignsystem/px-alert-label)
+
+---
 
 ## Overview
 
@@ -8,6 +9,7 @@ Px-alert-label is a Predix UI component used to draw attention to a particular p
 ## Usage
 
 ### Prerequisites
+
 1. node.js
 2. npm
 3. bower
@@ -40,7 +42,7 @@ Finally, use the component in your application:
 
 ## Documentation
 
-Read the full API and view the demo [here](https://predixdev.github.io/px-alert-label).
+Read the full API and view the demo [here](https://www.predix-ui.com/#/modules/px-alert-label).
 
 ## Local Development
 
@@ -64,11 +66,10 @@ Navigate to the root of that server (e.g. http://localhost:8080/) in a browser t
 
 By default gulp serve is configured to enable LiveReload and will be watching for modifications in your root directory as well as `/css`.
 
-GE Coding Style Guide
----------------------
+## GE Coding Style Guide
 
 [GE JS Developer's Guide](https://github.com/GeneralElectric/javascript)
 
-
 ### Known Issues
-Please use [Github Issues](https://github.com/PredixDev/px-alert-label/issues) to submit any bugs you might find.
+
+Please use [Github Issues](https://github.com/predixdesignsystem/px-alert-label/issues) to submit any bugs you might find.
