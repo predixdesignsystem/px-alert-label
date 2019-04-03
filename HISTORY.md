@@ -1,3 +1,7 @@
+v2.2.0
+=================
+* Added `--px-alert-label-border-width` CSS variable
+
 v2.1.2
 =================
 * Add 3 sass variables (width, height, vertical-align) to style svg icons
