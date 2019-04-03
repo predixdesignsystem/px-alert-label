@@ -34,7 +34,7 @@
   line-height: 0.8rem;
   background-color: var(--px-alert-label-background-color--important, red);
   color: var(--px-alert-label-text-color--important, white);
-  border: 1px solid var(--px-alert-label-border-color, transparent);
+  border: var(--px-alert-label-border-width, 1px) solid var(--px-alert-label-border-color, transparent);
 }
 
 .svg-canvas {
@@ -42,7 +42,7 @@
   height:  var(--px-alert-label-height,2.2rem);
   vertical-align: var(--px-alert-label-vertical-align, baseline);
   #polygon, #circle {
-    stroke-width: 1px;
+    stroke-width: var(--px-alert-label-border-width, 1px);
     stroke: var(--px-alert-label-border-color, transparent);
   }
 }
