@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +12,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="css/px-alert-label-styles.html"/>
-
-<!--
+*/
+/**
 
 ### Usage
 
@@ -48,21 +44,31 @@ Custom property | Description
 @blurb renders an alert label
 @homepage index.html
 @demo demo.html
--->
-<dom-module id="px-alert-label">
-  <template>
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
+
+import './css/px-alert-label-styles.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <style include="px-alert-label-styles"></style>
 
-    <span class$="alertlabel {{type}} {{_badge}}">
+    <span class\$="alertlabel {{type}} {{_badge}}">
       <template is="dom-if" if="{{badge}}">
         <template is="dom-if" if="{{!_isCircle(type)}}">
-          <svg class="svg-canvas" viewbox="0 0 33 33">
-            <polygon id="polygon" points$="{{_getPoints(type)}}"/>
+          <svg class="svg-canvas" viewBox="0 0 33 33">
+            <polygon id="polygon" points\$="{{_getPoints(type)}}"></polygon>
           </svg>
         </template>
         <template is="dom-if" if="{{_isCircle(type)}}">
-          <svg class="svg-canvas" viewbox="0 0 33 33">
-            <circle id="circle" cx="16" cy="16" r="15"/>
+          <svg class="svg-canvas" viewBox="0 0 33 33">
+            <circle id="circle" cx="16" cy="16" r="15"></circle>
           </svg>
         </template>
       </template>
@@ -70,61 +76,58 @@ Custom property | Description
         <span class="label__text">{{label}}</span>
       </div>
     </span>
-  </template>
-</dom-module>
+`,
 
-<script>
-  Polymer({
+  is: 'px-alert-label',
 
-    is: 'px-alert-label',
+  properties: {
+    /**
+     * The type of alert label defines the visual styling.
+     * Should be one of important, warning, error, information, healthy, or unknown.
+     */
+    type: String,
 
-    properties: {
-      /**
-       * The type of alert label defines the visual styling.
-       * Should be one of important, warning, error, information, healthy, or unknown.
-       */
+    /**
+     * The text to display inside of the label. When the 'badge' configuration is used,
+     * only one digit should be used for the label to indicate severity.
+     */
+    label: String,
+
+    /**
+     * If set to true, the label will appear as a triangle, diamond, square, pentagon, or circle
+     * to indicate the severity of an alert, for instance.
+     */
+    badge: {
+      type: Boolean,
+      value: false
+    },
+
+    _badge: {
       type: String,
-
-      /**
-       * The text to display inside of the label. When the 'badge' configuration is used,
-       * only one digit should be used for the label to indicate severity.
-       */
-      label: String,
-
-      /**
-       * If set to true, the label will appear as a triangle, diamond, square, pentagon, or circle
-       * to indicate the severity of an alert, for instance.
-       */
-      badge: {
-        type: Boolean,
-        value: false
-      },
-
-      _badge: {
-        type: String,
-        computed: '_getBadgeString(badge)'
-      }
-    },
-    _getBadgeString: function(badge) {
-      return badge ? 'badge' : '';
-    },
-    _getPoints: function(type) {
-      if(type === 'important') {
-        return '16.5,3 32,30 1,30';
-      }
-      else if(type === 'warning') {
-        return '16,0.5 32.5,16 16,32.5, 0.5,16';
-      }
-      else if(type === 'info' || type === 'information') {
-        return '6.6,32.5 26.4,32.5 32.5,13 16,0.5 0.5,13';
-      }
-      else {
-        return '3,3 3,30 30,30 30,3';
-      }
-    },
-    _isCircle: function(type) {
-      return type === 'unknown';
+      computed: '_getBadgeString(badge)'
     }
+  },
 
-  });
-</script>
+  _getBadgeString: function(badge) {
+    return badge ? 'badge' : '';
+  },
+
+  _getPoints: function(type) {
+    if(type === 'important') {
+      return '16.5,3 32,30 1,30';
+    }
+    else if(type === 'warning') {
+      return '16,0.5 32.5,16 16,32.5, 0.5,16';
+    }
+    else if(type === 'info' || type === 'information') {
+      return '6.6,32.5 26.4,32.5 32.5,13 16,0.5 0.5,13';
+    }
+    else {
+      return '3,3 3,30 30,30 30,3';
+    }
+  },
+
+  _isCircle: function(type) {
+    return type === 'unknown';
+  }
+});

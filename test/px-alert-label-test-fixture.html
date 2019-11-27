@@ -20,65 +20,127 @@ limitations under the License.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Component Test : Fixture for px-alert-label</title>
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
-    <link rel="import" href="../px-alert-label.html" />
-    <link rel="import" href="../../px-theme/px-theme-styles.html">
-    <script src="px-alert-label-custom-tests.js"></script>
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
+    <script type="module" src="../px-alert-label.js"></script>
+    <script type="module" src="../../px-theme/px-theme-styles.js"></script>
+    <script src="./px-alert-label-custom-tests.js"></script>
   </head>
 
   <body>
-    <custom-style>
-      <style include="px-theme-styles" is="custom-style"></style>
-    </custom-style>
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+const $_documentContainer = document.createElement('template');
 
-    <test-fixture id="fixture-important">
+$_documentContainer.innerHTML = `<custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-important">
       <template>
         <px-alert-label type="important" label="Important"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-warning">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-warning">
       <template>
         <px-alert-label type="warning" label="Warning"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-error">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-error">
       <template>
         <px-alert-label type="error" label="Error"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-info">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-info">
       <template>
         <px-alert-label type="info" label="Information"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-healthy">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-healthy">
       <template>
         <px-alert-label type="healthy" label="Healthy"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-healthy-inverted">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-healthy-inverted">
       <template>
         <px-alert-label type="healthy-inverted" label="Inverted"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-unknown">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-unknown">
       <template>
         <px-alert-label type="unknown" label="Unknown"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
 
-    <test-fixture id="fixture-badge">
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="fixture-badge">
       <template>
         <px-alert-label type="important" label="3" id="fixture-badge"></px-alert-label>
       </template>
-    </test-fixture>
+    </test-fixture>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
 
   </body>
 </html>
